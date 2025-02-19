@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelated Button with Sound</title>
+  <style>
+    /* Set Batman image as background */
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-image: url('C:\Users\Acer\OneDrive\Desktop\batman website\wp11110141-the-batman-2022-robert-pattinson-wallpapers.jpg'); /* Replace with your Batman image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Pixelated button styling */
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #000000;
+      border: 8px solid #000000;
+      border-radius: 0; /* No rounded corners to enhance the pixel effect */
+      cursor: pointer;
+      font-family: 'Press Start 2P', sans-serif; /* Retro font style */
+      outline: none;
+      position: relative;
+      box-shadow: 4px 4px 0px #000;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      background-color: #ff0000;
+      transform: translate(-2px, -2px); /* Creates a 'pop' effect on hover */
+      box-shadow: 6px 6px 0px #000;
+    }
+
+    button:active {
+      transform: translate(2px, 2px); /* Press-in effect */
+      box-shadow: 2px 2px 0px #000;
+    }
+    #batmanTrailer {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="playSound()">IM BATMAN</button>
+
+  <!-- Sound File -->
+  <audio id="myAudio" preload="auto">
+    <source src="C:\Users\Acer\OneDrive\Desktop\batman website\im-batman.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Batman Trailer Video -->
+  <video id="batmanTrailer" width="1920" height="1080">
+    <source src="C:\Users\Acer\OneDrive\Desktop\batman website\Rick Astley - Never Gonna Give You Up (Official Music Video).mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
+
+  <script>
+    let clickCount = 0;
+
+    function playSound() {
+      clickCount++;
+
+      if (clickCount === 10) {
+        // Hide the button and play the Batman trailer
+        document.querySelector("button").style.display = "none";
+        const trailer = document.getElementById("batmanTrailer");
+        trailer.style.display = "block";
+        trailer.play();
+      } else {
+        // Play the regular sound
+        const audio = document.getElementById("myAudio");
+        audio.currentTime = 0;
+        audio.play();
+      } if (clickcount === 20){
+        document.querySelector("button").style.display = "none";
+        const trailer = document.getElementById("batmanTrailer");
+        trailer.style.display = "block";
+        trailer.play();
+      }
+    }
+  </script>
+
+</body>
+</html>
